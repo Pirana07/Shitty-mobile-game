@@ -5,19 +5,28 @@ using UnityEngine;
 public class ChunkManager : MonoBehaviour
 {
     [Header("Elements")]
-    [SerializeField] Chunk chunkprefab
-    // Start is called before the first frame update
+    [SerializeField]  Chunk[] chunksPrefabs; 
+
+    [Header("Settings")]
+    [SerializeField]  int numberOfChunks = 5; 
+    [SerializeField]  Vector3 chunkStartOffset = Vector3.zero; 
+
     void Start()
-    {
-        for (int i = 0; i < 5; i++)
+    { 
+        Vector3 chunkPos = chunkStartOffset; 
+        // Instantiate chunks
+        for (int i = 0; i < numberOfChunks; i++)
         {
-            Instantiate(chunkprefab);
+             Chunk chunkToCreate = chunksPrefabs[Random.Range(0, chunksPrefabs.Length)];
+             if(i > 0){
+                chunkPos.z += chunkToCreate.GetLength() / 2;
+             }
+            Chunk chunkInstance = Instantiate(chunkToCreate, chunkPos, Quaternion.identity, transform); 
+            chunkPos.z += chunkInstance.GetLength() / 2;
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
     }
 }
