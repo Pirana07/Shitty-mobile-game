@@ -6,6 +6,8 @@ public class CrowdSystem : MonoBehaviour
 {
     [Header("Elements")]
     [SerializeField] Transform runnersParent;
+    [SerializeField] GameObject runnerPrefab;
+
 
 
     [Header("Settings")]
@@ -33,5 +35,49 @@ public class CrowdSystem : MonoBehaviour
 
     public float GetCrowdRadius(){
         return radius * Mathf.Sqrt(runnersParent.childCount);
+    }
+
+    public void ApplyBonus(BonusType bonusType, int bonusAmout){
+        switch(bonusType){
+            case BonusType.Addition:
+                AddRunners(bonusAmout);
+               break;
+
+               case BonusType.Product:
+               int runnersToAdd = (runnersParent.childCount * bonusAmout) - runnersParent.childCount;
+                AddRunners(runnersToAdd);
+               break;
+
+               case BonusType.Difference:
+               Debug.Log("runnersToAdd");
+                RemoveRunners(bonusAmout);
+               break;
+        
+                case BonusType.Division:
+               int runnersToRemove = runnersParent.childCount - (runnersParent.childCount / bonusAmout);
+                RemoveRunners(runnersToRemove);
+               break;
+        }
+    }
+
+    void AddRunners(int amount){
+        for (int i = 0; i < amount; i++)
+        {
+            Instantiate(runnerPrefab, runnersParent);
+        }
+    }
+    
+    void RemoveRunners(int amount){
+        if(amount > runnersParent.childCount){
+            amount = runnersParent.childCount;
+        }
+
+        int runnersAmount = runnersParent.childCount;
+        for (int i = runnersAmount - 1; i >= runnersAmount - amount; i--)
+        {
+            Transform runnerToDestroy = runnersParent.GetChild(i);
+            runnerToDestroy.SetParent(null);
+            Destroy(runnerToDestroy.gameObject);
+        }
     }
 }

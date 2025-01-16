@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+public enum BonusType{ Addition, Difference, Product, Division }
 public class Doors : MonoBehaviour
 {
-    enum BonusType{ Addition, Difference, Product, Division }
+    
 
 
     [Header("Elements")]
@@ -12,6 +13,8 @@ public class Doors : MonoBehaviour
     [SerializeField] SpriteRenderer leftDoorRenderer;
     [SerializeField] TextMeshPro rightDoorText;
     [SerializeField] TextMeshPro leftDoorText;
+    [SerializeField] Collider collider;
+
 
 
     [Header("Settings")]
@@ -71,4 +74,22 @@ public class Doors : MonoBehaviour
         }
       }
 
+      public int GetBonusAmount(float xPosition){
+        if(xPosition > 0){
+            return rightDoorBonusAmout;
+        }else{
+            return leftDoorBonusAmout;
+        }
+      }
+       public BonusType GetBonusType(float xPosition){
+        if(xPosition > 0){
+            return rightDoorBonusType;
+        }else{
+            return leftDoorBonusType;
+        }
+      }
+
+    public void Disable(){
+        collider.enabled = false;
+    }
 }

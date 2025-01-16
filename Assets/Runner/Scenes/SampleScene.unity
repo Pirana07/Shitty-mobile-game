@@ -183,12 +183,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 96950588}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2133936813}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &104667241
 GameObject:
@@ -290,40 +290,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crowdCounterText: {fileID: 1188685454}
   runnersParent: {fileID: 434343376}
---- !u!1 &157222151
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 157222152}
-  m_Layer: 0
-  m_Name: ---GamePlay---
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &157222152
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 157222151}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7595037, y: 2.316222, z: 2.644702}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 832575519}
-  - {fileID: 798925768}
-  - {fileID: 784415073}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &214078506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -427,7 +393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 294703591}
   m_Layer: 0
-  m_Name: LeftDoor
+  m_Name: RightDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -537,7 +503,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.27580434, y: 0.021752605, z: -0.0062432787, w: 0.9609474}
+  m_LocalRotation: {x: 0.27580437, y: 0.02175262, z: -0.0062432843, w: 0.96094733}
   m_LocalPosition: {x: 0, y: 1000, z: -1260}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
@@ -859,7 +825,7 @@ GameObject:
   - component: {fileID: 486971280}
   - component: {fileID: 486971281}
   m_Layer: 0
-  m_Name: Right Door Renderer
+  m_Name: LeftDoor Renderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1381,11 +1347,11 @@ Transform:
   m_GameObject: {fileID: 784415069}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.7595037, y: -2.316222, z: -2.644702}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 157222152}
+  m_Father: {fileID: 2133936813}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &798925767
 GameObject:
@@ -1398,6 +1364,7 @@ GameObject:
   - component: {fileID: 798925768}
   - component: {fileID: 798925769}
   - component: {fileID: 798925770}
+  - component: {fileID: 798925771}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1414,13 +1381,13 @@ Transform:
   m_GameObject: {fileID: 798925767}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.7595037, y: -2.316222, z: -2.644702}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 434343376}
   - {fileID: 104667243}
-  m_Father: {fileID: 157222152}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &798925769
 MonoBehaviour:
@@ -1451,8 +1418,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runnersParent: {fileID: 434343376}
+  runnerPrefab: {fileID: 1184499654013538132, guid: f99e26dcc87ba8649904d4b40a0a322d,
+    type: 3}
   radius: 0.43
   angle: 137.508
+--- !u!114 &798925771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798925767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62091cf02cd0ff44d931fd96cd8aadbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crowdSystem: {fileID: 798925770}
 --- !u!4 &799003034 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5645148396986556423, guid: f99e26dcc87ba8649904d4b40a0a322d,
@@ -1502,11 +1484,11 @@ Transform:
   m_GameObject: {fileID: 832575517}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.7595037, y: -2.316222, z: -2.644702}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 157222152}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &931870637
 PrefabInstance:
@@ -1610,6 +1592,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1043327158}
+  - component: {fileID: 1043327159}
+  - component: {fileID: 1043327160}
   m_Layer: 0
   m_Name: Doors
   m_TagString: Untagged
@@ -1634,6 +1618,50 @@ Transform:
   - {fileID: 1234210181}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1043327159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043327157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 239b9eb4dfc678e4dba5951dd0939c7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightDoorRenderer: {fileID: 2044150096}
+  leftDoorRenderer: {fileID: 486971281}
+  rightDoorText: {fileID: 1721072815}
+  leftDoorText: {fileID: 1354492195}
+  collider: {fileID: 1043327160}
+  rightDoorBonusType: 3
+  rightDoorBonusAmout: 5
+  leftDoorBonusType: 0
+  leftDoorBonusAmout: 3
+  bonusColor: {r: 0.14509805, g: 0.3647059, b: 0.77647066, a: 1}
+  penaltyColor: {r: 0.8000001, g: 0.08627451, b: 0.24313727, a: 1}
+--- !u!65 &1043327160
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043327157}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10, y: 3.87, z: 0.31}
+  m_Center: {x: 0, y: 0.96, z: 0}
 --- !u!1 &1057499874
 GameObject:
   m_ObjectHideFlags: 0
@@ -1972,7 +2000,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1218138720}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2758043, y: 0.021752605, z: -0.0062432787, w: 0.9609474}
+  m_LocalRotation: {x: 0.27580437, y: 0.021752618, z: -0.006243284, w: 0.96094733}
   m_LocalPosition: {x: 0, y: 1000, z: -1260}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
@@ -2064,7 +2092,7 @@ GameObject:
   - component: {fileID: 1354492196}
   - component: {fileID: 1354492195}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: LeftDoorText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2335,7 +2363,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1587050577}
   m_Layer: 0
-  m_Name: RightDoor
+  m_Name: LeftDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2401,12 +2429,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1649627240}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2133936813}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1685540768 stripped
 Transform:
@@ -2426,7 +2454,7 @@ GameObject:
   - component: {fileID: 1721072816}
   - component: {fileID: 1721072815}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: RightDoorText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2471,7 +2499,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '+10
+  m_text: '-10
 
 '
   m_isRightToLeft: 0
@@ -3106,7 +3134,7 @@ GameObject:
   - component: {fileID: 2044150095}
   - component: {fileID: 2044150096}
   m_Layer: 0
-  m_Name: Right Door Renderer
+  m_Name: RightDoor Renderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3195,7 +3223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2133936813}
   m_Layer: 0
-  m_Name: ----Camera-----
+  m_Name: ---Steup---
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3214,9 +3242,12 @@ Transform:
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1649627242}
+  - {fileID: 784415073}
   - {fileID: 410087041}
   - {fileID: 1218138721}
   - {fileID: 330585546}
+  - {fileID: 96950591}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &536527962138859951 stripped
@@ -3298,9 +3329,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 2133936813}
-  - {fileID: 157222152}
-  - {fileID: 96950591}
-  - {fileID: 1649627242}
   - {fileID: 739878705}
   - {fileID: 550015642}
   - {fileID: 1043327158}
+  - {fileID: 832575519}
+  - {fileID: 798925768}
