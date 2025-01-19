@@ -5,6 +5,7 @@ using UnityEngine;
 public class CrowdSystem : MonoBehaviour
 {
     [Header("Elements")]
+    [SerializeField] PlayerAnimator playerAnimator;
     [SerializeField] Transform runnersParent;
     [SerializeField] GameObject runnerPrefab;
 
@@ -64,6 +65,7 @@ public class CrowdSystem : MonoBehaviour
         for (int i = 0; i < amount; i++)
         {
             Instantiate(runnerPrefab, runnersParent);
+            playerAnimator.Run();
         }
     }
     

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
+
     [Header("Elements")]
     [SerializeField] CrowdSystem crowdSystem;
 
@@ -18,6 +20,14 @@ public class PlayerController : MonoBehaviour
     private Vector3 clickedScreenPosition;
     private Vector3 clickedPlayerPosition;
 
+ void Awake(){
+        if(instance != null){
+            Destroy(gameObject);
+        }else{
+            instance = this;
+        }
+    }
+    
     void Start(){
         GameManager.onGameStateChanged += GameStateChangedCallback;
     }

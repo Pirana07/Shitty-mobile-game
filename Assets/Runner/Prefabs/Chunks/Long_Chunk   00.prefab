@@ -219,12 +219,12 @@ PrefabInstance:
     - target: {fileID: 6213463851881363111, guid: d774402ec9ea1ab47abb1112f94035bc,
         type: 3}
       propertyPath: rightDoorBonusType
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6213463851881363111, guid: d774402ec9ea1ab47abb1112f94035bc,
         type: 3}
       propertyPath: rightDoorBonusAmout
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
