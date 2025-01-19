@@ -5,22 +5,45 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Elements")]
-    [SerializeField] private CrowdSystem crowdSystem;
+    [SerializeField] CrowdSystem crowdSystem;
 
     [Header("Settings")]
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private float slideSpeed;
-    [SerializeField] private float roadWidth;
+    [SerializeField] float moveSpeed;
+    [SerializeField] float slideSpeed;
+    [SerializeField] float roadWidth;
+    [SerializeField] PlayerAnimator playerAnimator;
+
+    bool canMove;
 
     private Vector3 clickedScreenPosition;
     private Vector3 clickedPlayerPosition;
 
+    void Start(){
+        GameManager.onGameStateChanged += GameStateChangedCallback;
+    }
     void Update()
     {
+        if(canMove){
         MoveForward();
         ManageControl();
-    }
+        }
 
+    }
+    
+    void GameStateChangedCallback(GameManager.GameState gameState){
+       if(gameState == GameManager.GameState.Game){
+            StartMoving();
+       } 
+    }
+    void StartMoving(){
+        canMove = true;
+        playerAnimator.Run();
+    }
+    void StopMoving(){
+        canMove = false;
+        playerAnimator.Idile();
+
+    }
     void MoveForward()
     {
         transform.position += Vector3.forward * Time.deltaTime * moveSpeed;

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerDetection : MonoBehaviour
 {
 
@@ -32,6 +32,9 @@ public class PlayerDetection : MonoBehaviour
                 
                 crowdSystem.ApplyBonus(bonusType, bonusAmout);
             }
+            else if(detectedColiders[i].tag == "Finish"){
+                SceneManager.LoadScene(0);
+             }
         }
     }
 }
