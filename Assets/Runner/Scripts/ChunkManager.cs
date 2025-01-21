@@ -57,4 +57,7 @@ public class ChunkManager : MonoBehaviour
     public float GetFinishZ(){
         return finishLine.transform.position.z;
     }
+    public int GetLevel(){
+        return PlayerPrefs.GetInt("level", 0);
+    }
 }

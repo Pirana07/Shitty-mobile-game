@@ -31,6 +31,11 @@ public class PlayerController : MonoBehaviour
     void Start(){
         GameManager.onGameStateChanged += GameStateChangedCallback;
     }
+
+    void OnDestroy() {
+        GameManager.onGameStateChanged -= GameStateChangedCallback;
+        
+    }
     void Update()
     {
         if(canMove){
