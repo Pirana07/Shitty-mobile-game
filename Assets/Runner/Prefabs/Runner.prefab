@@ -74,6 +74,8 @@ GameObject:
   - component: {fileID: 5645148396986556423}
   - component: {fileID: 6584113157731875416}
   - component: {fileID: 5772411177322072025}
+  - component: {fileID: 1902955223415411195}
+  - component: {fileID: 6638566097427064415}
   m_Layer: 0
   m_Name: Runner
   m_TagString: Untagged
@@ -137,6 +139,41 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &1902955223415411195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184499654013538132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07ea60204e7e5ee41943c591540afa5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &6638566097427064415
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184499654013538132}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 22.8
+  m_Height: 160.7
+  m_Direction: 1
+  m_Center: {x: 0, y: 93.6, z: 0}
 --- !u!1 &1288417469707404139
 GameObject:
   m_ObjectHideFlags: 0

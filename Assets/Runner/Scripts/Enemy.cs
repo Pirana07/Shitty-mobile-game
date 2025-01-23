@@ -4,63 +4,75 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    enum State{ Idle, Running }
+    enum State { Idle, Running }
 
     [Header("Settings")]
-    [SerializeField] float searchRadius;
-    [SerializeField] float moveSpeed;
-    State state;
-    Transform targetRunner;
+    [SerializeField]  float searchRadius = 5f;
+    [SerializeField]  float moveSpeed = 2f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+     State _state = State.Idle;
+     Transform _targetRunner;
+
     void Update()
     {
-        ManageSate();
-        
+        ManageState();
     }
-    void ManageSate(){
-        switch(state){
+
+    void ManageState()
+    {
+        switch (_state)
+        {
             case State.Idle:
                 SearchForTarget();
-             break;
-             case State.Running:
-                RunTorwardsTargt();
-              break;
+                break;
+            case State.Running:
+                RunTowardsTarget();
+                break;
         }
     }
-    void SearchForTarget(){
-        Collider[] detectedColliders = Physics.OverlapSphere(transform.position, searchRadius);
-        for (int i = 0; i < detectedColliders.Length; i++)
-        {
-            if(detectedColliders[i].TryGetComponent(out targetRunner runner)){
-                if(runner.IsTarget()){
-                    continue;
-                }
-                runner.SetTarget();
-                targetRunner = runner;
 
-                StartRunningTorwardsTarget();
+    void SearchForTarget()
+    {
+        Collider[] detectedColliders = Physics.OverlapSphere(transform.position, searchRadius);
+        foreach (var collider in detectedColliders)
+        {
+            if (collider.TryGetComponent(out Runner runner) && !runner.IsTarget())
+            {
+                runner.SetTarget();
+                _targetRunner = runner.transform;
+                StartRunningTowardsTarget();
+                return;
             }
         }
     }
-    void StartRunningTorwardsTarget(){
-        state = State.Running;
+
+    void StartRunningTowardsTarget()
+    {
+        _state = State.Running;
         GetComponent<Animator>().Play("Run");
     }
-    void RunTorwardsTarget(){
-        if(targetRunner == null){
+
+    void RunTowardsTarget()
+    {
+        if (_targetRunner == null)
+        {
+            _state = State.Idle; 
             return;
         }
-        transform.position = Vector3.MoveTowards(transform.position, targetRunner.position, Time.deltaTime * moveSpeed);
-        if(Vector3.Distance(transform.position, targetRunner.position) > .1f){
-            Destroy(targetRunner.gameObject);
-            Destroy(gameObject);
+
+        transform.position = Vector3.MoveTowards(transform.position, _targetRunner.position, Time.deltaTime * moveSpeed);
+
+        if (Vector3.Distance(transform.position, _targetRunner.position) < 0.1f)
+        {
+            Destroy(_targetRunner.gameObject); 
+            Destroy(gameObject); 
         }
+    } 
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, searchRadius);
     }
 }
