@@ -777,7 +777,6 @@ GameObject:
   - component: {fileID: 370916117}
   - component: {fileID: 370916119}
   - component: {fileID: 370916118}
-  - component: {fileID: 370916120}
   m_Layer: 5
   m_Name: Level
   m_TagString: Untagged
@@ -902,21 +901,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 370916116}
   m_CullTransparentMesh: 1
---- !u!114 &370916120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 370916116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
-  m_EffectDistance: {x: -3, y: -3}
-  m_UseGraphicAlpha: 1
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -2329,6 +2313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuPanel: {fileID: 870497398}
   gamePanel: {fileID: 642614132}
+  levelText: {fileID: 370916118}
   progressBar: {fileID: 762200947}
 --- !u!4 &1066803758
 Transform:
