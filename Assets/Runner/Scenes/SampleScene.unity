@@ -2214,31 +2214,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425a37e8a97be3649a4479dbc6124a08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chunksPrefabs:
-  - {fileID: 3390763620702290591, guid: 83f85fa10bc86df41abc7bb728d46f79, type: 3}
-  - {fileID: 370973407228110351, guid: 3a4a5e325f872874f9874168edbdf6c7, type: 3}
-  - {fileID: 5400049927208522209, guid: b9a110a07ad5542428adaadc3613fc2a, type: 3}
-  - {fileID: 3390763620702290591, guid: b90f5582adca65549920986876f83254, type: 3}
-  - {fileID: 370973407228110351, guid: 3a4a5e325f872874f9874168edbdf6c7, type: 3}
-  - {fileID: 5400049927208522209, guid: b9a110a07ad5542428adaadc3613fc2a, type: 3}
-  - {fileID: 5400049927208522209, guid: b9a110a07ad5542428adaadc3613fc2a, type: 3}
-  - {fileID: 3390763620702290591, guid: b90f5582adca65549920986876f83254, type: 3}
-  - {fileID: 370973407228110351, guid: 3a4a5e325f872874f9874168edbdf6c7, type: 3}
-  - {fileID: 5400049927208522209, guid: f5e84db7cbca23d4f8cdc27d148a848d, type: 3}
-  - {fileID: 3390763620702290591, guid: 8d9d235e3868c9d43a0690b606dfb31b, type: 3}
-  levelChunks:
-  - {fileID: 3390763620702290591, guid: 83f85fa10bc86df41abc7bb728d46f79, type: 3}
-  - {fileID: 370973407228110351, guid: 3a4a5e325f872874f9874168edbdf6c7, type: 3}
-  - {fileID: 5400049927208522209, guid: fc7e5521ea1f4fb4cb78555784f3aa5e, type: 3}
-  - {fileID: 3390763620702290591, guid: b90f5582adca65549920986876f83254, type: 3}
-  - {fileID: 370973407228110351, guid: 3a4a5e325f872874f9874168edbdf6c7, type: 3}
-  - {fileID: 5400049927208522209, guid: b9a110a07ad5542428adaadc3613fc2a, type: 3}
-  - {fileID: 5400049927208522209, guid: b9a110a07ad5542428adaadc3613fc2a, type: 3}
-  - {fileID: 3390763620702290591, guid: b90f5582adca65549920986876f83254, type: 3}
-  - {fileID: 370973407228110351, guid: 3a4a5e325f872874f9874168edbdf6c7, type: 3}
-  - {fileID: 5400049927208522209, guid: f5e84db7cbca23d4f8cdc27d148a848d, type: 3}
-  - {fileID: 3390763620702290591, guid: 8d9d235e3868c9d43a0690b606dfb31b, type: 3}
-  numberOfChunks: 5
+  levels:
+  - {fileID: 11400000, guid: d6d7533d1b332434798bef524cfd5b4c, type: 2}
+  numberOfChunks: 11
   chunkStartOffset: {x: 0, y: -4.25, z: 0}
 --- !u!4 &1649627242
 Transform:
@@ -2249,11 +2227,11 @@ Transform:
   m_GameObject: {fileID: 1649627240}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalPosition: {x: -12.461082, y: 38.753532, z: -71.742134}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2133936813}
+  m_Father: {fileID: 1657714023}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1657714022
 GameObject:
@@ -2284,6 +2262,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1649627242}
   - {fileID: 1156166726}
   - {fileID: 1066803758}
   m_Father: {fileID: 0}
@@ -2551,7 +2530,6 @@ Transform:
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1649627242}
   - {fileID: 784415073}
   - {fileID: 410087041}
   - {fileID: 1218138721}
