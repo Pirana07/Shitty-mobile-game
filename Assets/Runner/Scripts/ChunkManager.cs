@@ -5,7 +5,7 @@ using UnityEngine;
 public class ChunkManager : MonoBehaviour
 {
     public static ChunkManager instance;
-
+   
     [Header("Elements")]
     [SerializeField] LevelSO[] levels;
     GameObject finishLine;
@@ -28,8 +28,8 @@ public class ChunkManager : MonoBehaviour
 
     void Start()
     {
-        finishLine = GameObject.FindWithTag("Finish");
         GenerateLevel();
+        finishLine = GameObject.FindWithTag("Finish");
     }
 
     void GenerateLevel()
@@ -57,6 +57,11 @@ public class ChunkManager : MonoBehaviour
 
     public float GetFinishZ()
     {
+        if (finishLine == null)
+        {
+            Debug.LogError("Finish line not found! T T");
+            return 0;
+        }
         return finishLine.transform.position.z;
     }
 
