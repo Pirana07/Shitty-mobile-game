@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
     void GameStateChangedCallback(GameManager.GameState gameState){
        if(gameState == GameManager.GameState.Game){
             StartMoving();
-       } else if(gameState == GameManager.GameState.GameOver){
+       } else if(gameState == GameManager.GameState.GameOver || gameState == GameManager.GameState.LevelComplete){
             StopMoving();
        }
     }

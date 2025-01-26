@@ -7,13 +7,11 @@ public class PlayerDetection : MonoBehaviour
 
     [Header("Elements")]
     [SerializeField] CrowdSystem crowdSystem;
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         DetectDoors();
@@ -34,7 +32,10 @@ public class PlayerDetection : MonoBehaviour
             }
             else if(detectedColiders[i].tag == "Finish"){
                 PlayerPrefs.SetInt("level", PlayerPrefs.GetInt("level") + 1);
-                SceneManager.LoadScene(0);
+
+                GameManager.instance.SetGameState(GameManager.GameState.LevelComplete);
+
+                // SceneManager.LoadScene(0);
              }
         }
     }
