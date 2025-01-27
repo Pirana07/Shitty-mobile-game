@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Enemy : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class Enemy : MonoBehaviour
     [SerializeField]  float searchRadius = 5f;
     [SerializeField]  float moveSpeed = 2f;
 
+    [Header("Events")]
+    public static Action onRunnerDied;
 
      State _state = State.Idle;
      Transform _targetRunner;
@@ -65,6 +68,7 @@ public class Enemy : MonoBehaviour
 
         if (Vector3.Distance(transform.position, _targetRunner.position) < 0.1f)
         {
+            onRunnerDied?.Invoke();
             Destroy(_targetRunner.gameObject); 
             Destroy(gameObject); 
         }

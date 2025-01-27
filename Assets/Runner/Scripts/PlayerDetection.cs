@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 public class PlayerDetection : MonoBehaviour
 {
 
     [Header("Elements")]
     [SerializeField] CrowdSystem crowdSystem;
+
+    [Header("Events")]
+    public static Action onDoorsHit;
     void Start()
     {
         
@@ -14,7 +18,9 @@ public class PlayerDetection : MonoBehaviour
 
     void Update()
     {
+        if(GameManager.instance.IsGameState()){
         DetectDoors();
+        }
     }
     void DetectDoors(){
         Collider[] detectedColiders = Physics.OverlapSphere(transform.position, 1);
@@ -27,6 +33,7 @@ public class PlayerDetection : MonoBehaviour
                 BonusType bonusType = doors.GetBonusType(transform.position.x);
                 
                 doors.Disable();
+                onDoorsHit?.Invoke();
                 
                 crowdSystem.ApplyBonus(bonusType, bonusAmout);
             }
