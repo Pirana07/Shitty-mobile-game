@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chunks:
   - {fileID: 3390763620702290591, guid: 83f85fa10bc86df41abc7bb728d46f79, type: 3}
+  - {fileID: 370973407228110351, guid: 3a4a5e325f872874f9874168edbdf6c7, type: 3}
   - {fileID: 3390763620702290591, guid: 8d9d235e3868c9d43a0690b606dfb31b, type: 3}
