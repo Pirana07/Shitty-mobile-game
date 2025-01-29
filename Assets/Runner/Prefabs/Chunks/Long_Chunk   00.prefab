@@ -218,6 +218,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6213463851881363111, guid: d774402ec9ea1ab47abb1112f94035bc,
         type: 3}
+      propertyPath: leftDoorBonusType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6213463851881363111, guid: d774402ec9ea1ab47abb1112f94035bc,
+        type: 3}
       propertyPath: rightDoorBonusType
       value: 1
       objectReference: {fileID: 0}
