@@ -23,6 +23,7 @@ public class DataManager : MonoBehaviour
     void Start()
     {
         UpdateCoinsTexts();
+          coins = 0;
     }
 
     void UpdateCoinsTexts(){
